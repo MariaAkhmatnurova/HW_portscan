@@ -264,10 +264,10 @@ def main():
         tcp_open = scan_tcp_syn(args.ip_address, local_ip, targets["TCP"], args.timeout)
         udp_open = scan_udp(args.ip_address, targets["UDP"], args.timeout)
     except PermissionError:
-        print("Ошибка: raw-сокеты требуют права root", file=sys.stderr)
+        print("Ошибка: raw-сокеты требуют права root")
         return 1
     except OSError as exc:
-        print(f"Ошибка: {exc}", file=sys.stderr)
+        print(f"Ошибка: {exc}")
         return 1
 
     print_rows("TCP", tcp_open, args, args.ip_address)
